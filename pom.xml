@@ -55,19 +55,76 @@
                  transitive dependencies of meilisearch-java 0.21.0. The okhttp 5.x Maven artifact
                  is a multi-platform shell whose JVM classes live in okhttp-jvm (verified
                  empirically); both are pinned here and core depends on okhttp-jvm explicitly. -->
-            <dependency><groupId>com.squareup.okhttp3</groupId><artifactId>okhttp</artifactId><version>${okhttp.version}</version></dependency>
-            <dependency><groupId>com.squareup.okhttp3</groupId><artifactId>okhttp-jvm</artifactId><version>${okhttp.version}</version></dependency>
-            <dependency><groupId>com.squareup.okhttp3</groupId><artifactId>logging-interceptor</artifactId><version>${okhttp.version}</version></dependency>
-            <dependency><groupId>com.google.code.gson</groupId><artifactId>gson</artifactId><version>${gson.version}</version></dependency>
-            <dependency><groupId>com.fasterxml.jackson</groupId><artifactId>jackson-bom</artifactId><version>${jackson2.version}</version><type>pom</type><scope>import</scope></dependency>
-            <dependency><groupId>com.meilisearch.sdk</groupId><artifactId>meilisearch-java</artifactId><version>${meilisearch-java.version}</version></dependency>
-            <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-dependencies</artifactId><version>${spring-boot.version}</version><type>pom</type><scope>import</scope></dependency>
-            <dependency><groupId>io.github.lamspace</groupId><artifactId>meili-orm-core</artifactId><version>${project.version}</version></dependency>
-            <dependency><groupId>io.github.lamspace</groupId><artifactId>meili-orm-core</artifactId><version>${project.version}</version><type>test-jar</type></dependency>
-            <dependency><groupId>io.github.lamspace</groupId><artifactId>meili-orm-spring-boot-autoconfigure</artifactId><version>${project.version}</version></dependency>
-            <dependency><groupId>io.github.lamspace</groupId><artifactId>meili-orm-serializer-jackson3</artifactId><version>${project.version}</version></dependency>
-            <dependency><groupId>io.github.lamspace</groupId><artifactId>meili-orm-repository</artifactId><version>${project.version}</version></dependency>
-            <dependency><groupId>io.github.lamspace</groupId><artifactId>meili-orm-testcontainers</artifactId><version>${project.version}</version></dependency>
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp-jvm</artifactId>
+                <version>${okhttp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>logging-interceptor</artifactId>
+                <version>${okhttp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${gson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
+                <version>${jackson2.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.meilisearch.sdk</groupId>
+                <artifactId>meilisearch-java</artifactId>
+                <version>${meilisearch-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.github.lamspace</groupId>
+                <artifactId>meili-orm-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.lamspace</groupId>
+                <artifactId>meili-orm-core</artifactId>
+                <version>${project.version}</version>
+                <type>test-jar</type>
+            </dependency>
+            <dependency>
+                <groupId>io.github.lamspace</groupId>
+                <artifactId>meili-orm-spring-boot-autoconfigure</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.lamspace</groupId>
+                <artifactId>meili-orm-serializer-jackson3</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.lamspace</groupId>
+                <artifactId>meili-orm-repository</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.lamspace</groupId>
+                <artifactId>meili-orm-testcontainers</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>
@@ -76,12 +133,34 @@
                 <!-- Spring convention: parameter-name resolution by annotations such as
                      @PathVariable/@RequestParam relies on the -parameters compiler flag
                      (default of the official Boot parent, which this repo does not inherit). -->
-                <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.15.0</version>
-                    <configuration><parameters>true</parameters></configuration></plugin>
-                <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-surefire-plugin</artifactId><version>3.5.2</version></plugin>
-                <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-failsafe-plugin</artifactId><version>3.5.2</version></plugin>
-                <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-jar-plugin</artifactId><version>3.4.2</version></plugin>
-                <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-javadoc-plugin</artifactId><version>3.11.2</version></plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.15.0</version>
+                    <configuration>
+                        <parameters>true</parameters>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.5.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>3.5.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.4.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>3.11.2</version>
+                </plugin>
                 <plugin>
                     <groupId>com.mycila</groupId>
                     <artifactId>license-maven-plugin</artifactId>
@@ -119,7 +198,9 @@
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
-                        <goals><goal>jar</goal></goals>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
@@ -130,7 +211,9 @@
                     <execution>
                         <id>license-header-check</id>
                         <phase>validate</phase>
-                        <goals><goal>check</goal></goals>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>

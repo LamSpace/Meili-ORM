@@ -3,7 +3,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent><groupId>io.github.lamspace</groupId><artifactId>meili-orm</artifactId><version>1.0-SNAPSHOT</version></parent>
+    <parent>
+        <groupId>io.github.lamspace</groupId>
+        <artifactId>meili-orm</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <artifactId>meili-orm-serializer-jackson3</artifactId>
     <name>meili-orm-serializer-jackson3</name>
     <description>Optional meili-orm Jackson 3 serializer module: adding the dependency hands document serialization over to Jackson 3 in Boot 4 applications; the rest of the build keeps zero Jackson 3 compile dependencies.</description>
@@ -12,17 +16,47 @@
             <!-- The only product module compiled against the Boot 4 baseline: tools.jackson
                  coordinates are managed solely by that generation's BOM (rationale and upgrade
                  duties are documented in docs/boot3-to-boot4.md). -->
-            <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-dependencies</artifactId><version>4.0.3</version><type>pom</type><scope>import</scope></dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>4.0.3</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
-        <dependency><groupId>io.github.lamspace</groupId><artifactId>meili-orm-core</artifactId></dependency>
+        <dependency>
+            <groupId>io.github.lamspace</groupId>
+            <artifactId>meili-orm-core</artifactId>
+        </dependency>
         <!-- Ordering anchor: the auto-configuration class referenced by @AutoConfiguration(before=...) lives in meili-orm-spring-boot-autoconfigure. -->
-        <dependency><groupId>io.github.lamspace</groupId><artifactId>meili-orm-spring-boot-autoconfigure</artifactId></dependency>
-        <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-autoconfigure</artifactId></dependency>
-        <dependency><groupId>tools.jackson.core</groupId><artifactId>jackson-databind</artifactId></dependency>
-        <dependency><groupId>org.junit.jupiter</groupId><artifactId>junit-jupiter</artifactId><scope>test</scope></dependency>
-        <dependency><groupId>org.assertj</groupId><artifactId>assertj-core</artifactId><scope>test</scope></dependency>
-        <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-test</artifactId><scope>test</scope></dependency>
+        <dependency>
+            <groupId>io.github.lamspace</groupId>
+            <artifactId>meili-orm-spring-boot-autoconfigure</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>tools.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 </project>

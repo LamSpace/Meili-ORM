@@ -3,30 +3,90 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent><groupId>io.github.lamspace</groupId><artifactId>meili-orm-it</artifactId><version>1.0-SNAPSHOT</version></parent>
+    <parent>
+        <groupId>io.github.lamspace</groupId>
+        <artifactId>meili-orm-it</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <artifactId>meili-orm-it-boot4-jackson3</artifactId>
     <name>meili-orm-it-boot4-jackson3</name>
     <description>Compatibility matrix, Boot 4 + Jackson3 opt-in generation: verifies the "dependency equals takeover" behavior of the optional serializer module with real round-trips.</description>
     <dependencyManagement>
         <dependencies>
-            <dependency><groupId>org.testcontainers</groupId><artifactId>testcontainers-bom</artifactId><version>${testcontainers.version}</version><type>pom</type><scope>import</scope></dependency>
+            <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>testcontainers-bom</artifactId>
+                <version>${testcontainers.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <!-- Same generation as the Boot 4.0.3 baseline matrix: this module only adds classpath members, it does not switch generations. -->
-            <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-dependencies</artifactId><version>4.0.3</version><type>pom</type><scope>import</scope></dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>4.0.3</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
-        <dependency><groupId>io.github.lamspace</groupId><artifactId>spring-boot-starter-meili-orm</artifactId><version>${project.version}</version></dependency>
+        <dependency>
+            <groupId>io.github.lamspace</groupId>
+            <artifactId>spring-boot-starter-meili-orm</artifactId>
+            <version>${project.version}</version>
+        </dependency>
         <!-- Reuses the ITBook/ItApp test shells from the baseline Boot 4 matrix test-jar
              (its main ITs are not on this classpath and do not run; only the test classes are taken). -->
-        <dependency><groupId>io.github.lamspace</groupId><artifactId>meili-orm-it-boot4</artifactId><version>${project.version}</version><type>test-jar</type><scope>test</scope></dependency>
-        <dependency><groupId>io.github.lamspace</groupId><artifactId>meili-orm-core</artifactId><type>test-jar</type><scope>test</scope></dependency>
-        <dependency><groupId>io.github.lamspace</groupId><artifactId>meili-orm-serializer-jackson3</artifactId><version>${project.version}</version><scope>test</scope></dependency>
-        <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-test</artifactId><scope>test</scope></dependency>
-        <dependency><groupId>org.testcontainers</groupId><artifactId>testcontainers</artifactId><scope>test</scope></dependency>
-        <dependency><groupId>org.testcontainers</groupId><artifactId>junit-jupiter</artifactId><scope>test</scope></dependency>
+        <dependency>
+            <groupId>io.github.lamspace</groupId>
+            <artifactId>meili-orm-it-boot4</artifactId>
+            <version>${project.version}</version>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.github.lamspace</groupId>
+            <artifactId>meili-orm-core</artifactId>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.github.lamspace</groupId>
+            <artifactId>meili-orm-serializer-jackson3</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>testcontainers</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
-    <build><plugins>
-        <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-failsafe-plugin</artifactId>
-            <executions><execution><goals><goal>integration-test</goal><goal>verify</goal></goals></execution></executions></plugin>
-    </plugins></build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
