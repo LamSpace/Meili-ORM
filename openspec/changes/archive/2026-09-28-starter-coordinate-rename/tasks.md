@@ -21,4 +21,4 @@
 - [x] 4.1 全量重装并跑完整测试流程：`mvn -s /home/lam/repo/settings.xml clean install`（Docker 已启用；双代 IT 矩阵 + jackson3 IT + examples 冒烟全部真实执行，不得 skip） → 验证：BUILD SUCCESS，无测试失败
 - [x] 4.2 零残留验收：活动文件范围（排除 `openspec/changes/archive/**`、`docs/internal/**`、`target/`、本变更目录、CHANGELOG 双语更名条目）内 `grep -rn "spring-boot-starter-meili-orm"` → 验证：零命中（实测：仅 CHANGELOG 记录更名事实的两处，口径调整后达成）
 - [x] 4.3 门禁复跑：`bash scripts/check-source-citations.sh` → 验证：退出码 0；license 与 javadoc 门禁已由 4.1 构建覆盖
-- [ ] 4.4 单 commit 线性提交并推送 master（项目交付惯例：不建分支不开 PR） → 验证：`git show --stat` 仅含本次改名相关文件
+- [x] 4.4 单 commit 线性提交并推送 master（项目交付惯例：不建分支不开 PR） → 验证：`git show --stat` 仅含本次改名相关文件
