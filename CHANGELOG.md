@@ -27,6 +27,11 @@ once released.
 
 ### Changed
 
+- Starter coordinate renamed from `spring-boot-starter-meili-orm` to
+  `meili-orm-spring-boot-starter`: the `spring-boot-starter-` prefix is reserved by Spring Boot
+  for its own starters, and third-party starters follow `<name>-spring-boot-starter`
+  (MyBatis-style), which also aligns the module with its `meili-orm-*` siblings. The rename
+  landed before the first release, so no published artifact carries the old coordinate.
 - Exception messages and log output in `src/main`, and all source comments/Javadoc across
   main, test and examples, are now English (Chinese string literals that carry test/demo
   *data* semantics are preserved; see `CONTRIBUTING.md`).

@@ -4,7 +4,7 @@
 
 ## Conclusion first
 
-The same `spring-boot-starter-meili-orm` jar runs on both Boot 3.5.x and 4.x: upgrading an
+The same `meili-orm-spring-boot-starter` jar runs on both Boot 3.5.x and 4.x: upgrading an
 application from 3.5 to 4.x requires **no coordinate change and no configuration change on
 the meili-orm side** (the `meili.*` property prefix and the `AutoConfiguration.imports`
 mechanism are identical across both generations). The only decision point is whether to add

@@ -41,7 +41,7 @@ Then add the starter:
 ```xml
 <dependency>
     <groupId>io.github.lamspace</groupId>
-    <artifactId>spring-boot-starter-meili-orm</artifactId>
+    <artifactId>meili-orm-spring-boot-starter</artifactId>
     <version>1.0-SNAPSHOT</version>
 </dependency>
 ```
@@ -183,7 +183,7 @@ Six artifacts are published; everything else is build-only or tooling.
 Meili-ORM/                                # repo root · Maven reactor (coordinates/prefix keep lowercase meili-orm)
 ├── meili-orm-core/                       # published — mapping, query IR, settings, Operations (no Spring)
 ├── meili-orm-spring-boot-autoconfigure/  # published — Boot auto-config, index init & settings sync
-├── spring-boot-starter-meili-orm/        # published — core + autoconfigure + Boot base starter
+├── meili-orm-spring-boot-starter/        # published — core + autoconfigure + Boot base starter
 ├── meili-orm-serializer-jackson3/        # published (opt-in) — Jackson 3 serializer for Boot 4
 ├── meili-orm-repository/                 # published (opt-in) — declarative repositories
 ├── meili-orm-testcontainers/             # published (opt-in) — typed container + service-connection

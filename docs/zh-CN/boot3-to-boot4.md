@@ -4,7 +4,7 @@
 
 ## 结论先行
 
-同一个 `spring-boot-starter-meili-orm` jar 同时运行于 Boot 3.5.x 与 4.x：应用从 3.5 升级到
+同一个 `meili-orm-spring-boot-starter` jar 同时运行于 Boot 3.5.x 与 4.x：应用从 3.5 升级到
 4.x 时 **meili-orm 无需换坐标、无需改配置**（属性前缀 `meili.*` 与
 `AutoConfiguration.imports` 机制两代一致）。唯一的选择点是是否引入 Jackson 3 序列化模块。
 

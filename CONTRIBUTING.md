@@ -26,7 +26,7 @@ examples), runs unit and integration tests, and enforces the three gates below. 
 partial escape hatches: the matrices and sentinel ITs are the compatibility contract.
 
 The reactor layout: five product modules (`meili-orm-core`, `meili-orm-spring-boot-autoconfigure`,
-`spring-boot-starter-meili-orm`, `meili-orm-serializer-jackson3`, `meili-orm-repository`, plus the
+`meili-orm-spring-boot-starter`, `meili-orm-serializer-jackson3`, `meili-orm-repository`, plus the
 opt-in `meili-orm-testcontainers`), `it/` compatibility matrices, and `examples/` demo apps. The
 repository and testcontainers modules are deliberately **not** aggregated by the starter.
 

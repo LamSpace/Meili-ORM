@@ -32,7 +32,7 @@
     <modules>
         <module>meili-orm-core</module>
         <module>meili-orm-spring-boot-autoconfigure</module>
-        <module>spring-boot-starter-meili-orm</module>
+        <module>meili-orm-spring-boot-starter</module>
         <module>meili-orm-serializer-jackson3</module>
         <module>meili-orm-repository</module>
         <module>meili-orm-testcontainers</module>

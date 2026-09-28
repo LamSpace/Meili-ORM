@@ -39,7 +39,7 @@ mvn -DskipTests install
 ```xml
 <dependency>
     <groupId>io.github.lamspace</groupId>
-    <artifactId>spring-boot-starter-meili-orm</artifactId>
+    <artifactId>meili-orm-spring-boot-starter</artifactId>
     <version>1.0-SNAPSHOT</version>
 </dependency>
 ```
@@ -174,7 +174,7 @@ nested 关联查询、SpEL 动态索引名、审计操作人（`@CreatedBy`/`@La
 Meili-ORM/                                # 仓库根 · 多模块 Maven reactor（Maven 坐标与配置前缀仍用小写 meili-orm）
 ├── meili-orm-core/                       # 发布 — 映射、查询 IR、settings 投影、模板 Operations（零 Spring）
 ├── meili-orm-spring-boot-autoconfigure/  # 发布 — Boot 自动配置、索引初始化与 settings 同步
-├── spring-boot-starter-meili-orm/        # 发布 — starter：core + autoconfigure + Boot base
+├── meili-orm-spring-boot-starter/        # 发布 — starter：core + autoconfigure + Boot base
 ├── meili-orm-serializer-jackson3/        # 发布（可选）— 面向 Boot 4 的 Jackson 3 序列化
 ├── meili-orm-repository/                 # 发布（可选）— 声明式仓库层
 ├── meili-orm-testcontainers/             # 发布（可选）— 类型化容器 + service-connection 桥接

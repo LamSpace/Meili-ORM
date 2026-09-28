@@ -2,15 +2,15 @@
 
 ## Purpose
 
-定义 `spring-boot-starter-meili-orm` 的发布物契约：聚合依赖坐标、自动配置注册文件完整性与配置属性 IDE 元数据在册，保证"加一个依赖即可用"的 starter 语义。
+定义 `meili-orm-spring-boot-starter` 的发布物契约：聚合依赖坐标、自动配置注册文件完整性与配置属性 IDE 元数据在册，保证"加一个依赖即可用"的 starter 语义。
 ## Requirements
 ### Requirement: starter 聚合坐标
 
-`spring-boot-starter-meili-orm` SHALL 以纯聚合 pom 形式依赖 Boot 基础 starter、`meili-orm-core` 与 `meili-orm-spring-boot-autoconfigure`，自身不含源码；用户仅声明该坐标即可获得全部运行期类与自动配置。
+`meili-orm-spring-boot-starter` SHALL 以纯聚合 pom 形式依赖 Boot 基础 starter、`meili-orm-core` 与 `meili-orm-spring-boot-autoconfigure`，自身不含源码；用户仅声明该坐标即可获得全部运行期类与自动配置。
 
 #### Scenario: 单依赖引全栈
 
-- **WHEN** 应用 pom 仅声明 spring-boot-starter-meili-orm 坐标
+- **WHEN** 应用 pom 仅声明 meili-orm-spring-boot-starter 坐标
 - **THEN** classpath 含 core、autoconfigure、SDK 传递依赖与 Boot 基础件，上下文可装配
 
 ### Requirement: AutoConfiguration.imports 注册完整性

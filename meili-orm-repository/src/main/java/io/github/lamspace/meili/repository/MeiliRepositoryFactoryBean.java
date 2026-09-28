@@ -78,7 +78,7 @@ public class MeiliRepositoryFactoryBean<T, ID, R extends Repository<T, ID>>
             context = beanFactory.getBean(MeiliMappingContext.class);
         } catch (NoSuchBeanDefinitionException e) {
             throw new IllegalStateException("MeiliRepository requires MeiliSearchOperations/"
-                    + "MeiliMappingContext beans in the container: make sure spring-boot-starter-meili-orm is on the classpath and meili.enabled=true"
+                    + "MeiliMappingContext beans in the container: make sure meili-orm-spring-boot-starter is on the classpath and meili.enabled=true"
                     + " (repository interface: " + repositoryInterface.getName() + ")", e);
         }
         @SuppressWarnings("unchecked")

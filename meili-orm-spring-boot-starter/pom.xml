@@ -8,8 +8,8 @@
         <artifactId>meili-orm</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>spring-boot-starter-meili-orm</artifactId>
-    <name>spring-boot-starter-meili-orm</name>
+    <artifactId>meili-orm-spring-boot-starter</artifactId>
+    <name>meili-orm-spring-boot-starter</name>
     <description>meili-orm Spring Boot starter aggregate: core + autoconfigure + the Boot base starter.</description>
     <dependencies>
         <dependency>

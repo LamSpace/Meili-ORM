@@ -24,7 +24,7 @@ mvn clean verify
 测试，并强制下述三道门禁。矩阵与哨兵 IT 就是兼容性契约，没有旁路。
 
 reactor 布局：产品模块 `meili-orm-core`、`meili-orm-spring-boot-autoconfigure`、
-`spring-boot-starter-meili-orm`、`meili-orm-serializer-jackson3`、`meili-orm-repository`，
+`meili-orm-spring-boot-starter`、`meili-orm-serializer-jackson3`、`meili-orm-repository`，
 加上 opt-in 的 `meili-orm-testcontainers`；`it/` 兼容矩阵；`examples/` 演示工程。
 repository 与 testcontainers 刻意**不**被 starter 聚合。
 

@@ -23,6 +23,10 @@
 
 ### 变更
 
+- starter 坐标由 `spring-boot-starter-meili-orm` 更名为 `meili-orm-spring-boot-starter`：
+  `spring-boot-starter-` 前缀由 Spring 官方保留，第三方 starter 应采用
+  `<名称>-spring-boot-starter` 约定（MyBatis 同型），更名后与 `meili-orm-*` 家族命名对齐；
+  更名发生在首次发布之前，旧坐标不存在下游影响。
 - `src/main` 的异常消息与日志文案、以及 main/test/examples 的全部注释/Javadoc 统一为英文
   （承担测试/演示**数据**语义的中文字面量按约定保留，见 `CONTRIBUTING.md`）。
 - README 装配小节明示发布状态：构件尚未上架 Maven Central，从源码安装。消息文本不属于

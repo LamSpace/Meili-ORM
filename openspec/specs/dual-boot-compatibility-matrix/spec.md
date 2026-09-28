@@ -8,7 +8,7 @@
 
 ### Requirement: 双代矩阵模块
 
-系统 SHALL 提供 `it/meili-orm-it-boot4` 与 `it/meili-orm-it-boot3` 两个 IT 模块：前者 dependencyManagement 导入 `spring-boot-dependencies` 4.0.3，后者导入 3.5.16（子模块 BOM 声明先于继承的父 BOM 取得覆盖）；两模块均依赖当前 reactor 产出的 `spring-boot-starter-meili-orm` 与 `meili-orm-core` test-jar，并在根 `mvn -s /home/lam/repo/settings.xml clean verify` 时各执行一轮。
+系统 SHALL 提供 `it/meili-orm-it-boot4` 与 `it/meili-orm-it-boot3` 两个 IT 模块：前者 dependencyManagement 导入 `spring-boot-dependencies` 4.0.3，后者导入 3.5.16（子模块 BOM 声明先于继承的父 BOM 取得覆盖）；两模块均依赖当前 reactor 产出的 `meili-orm-spring-boot-starter` 与 `meili-orm-core` test-jar，并在根 `mvn -s /home/lam/repo/settings.xml clean verify` 时各执行一轮。
 
 #### Scenario: 根全量构建含双矩阵
 

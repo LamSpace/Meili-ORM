@@ -33,7 +33,7 @@
     <dependencies>
         <dependency>
             <groupId>io.github.lamspace</groupId>
-            <artifactId>spring-boot-starter-meili-orm</artifactId>
+            <artifactId>meili-orm-spring-boot-starter</artifactId>
             <version>${project.version}</version>
         </dependency>
         <!-- Reuses the ITBook/ItApp test shells from the baseline Boot 4 matrix test-jar

@@ -88,7 +88,7 @@
 #### Scenario: 源码构建安装实测走通
 
 - **WHEN** 干净环境（非维护者本机）严格按 README 源码构建步骤安装后按最小装配建工程编译
-- **THEN** `spring-boot-starter-meili-orm` 经本地仓库解析成功，工程编译通过
+- **THEN** `meili-orm-spring-boot-starter` 经本地仓库解析成功，工程编译通过
 
 ### Requirement: 内部过程材料隔离
 
