@@ -8,7 +8,7 @@ once released.
 
 [中文](CHANGELOG.zh-CN.md)
 
-## [Unreleased]
+## [1.0.0] - 2026-09-29
 
 ### Added
 
@@ -21,9 +21,18 @@ once released.
 - `CONTRIBUTING.md` (build commands, the three build gates, source-language convention,
   maintainer dependency-upgrade checklist) and this `CHANGELOG.md`, both bilingual.
 - Badges: license, CI status, Java baseline, Spring Boot generations, Meilisearch server
-  generation.
+  generation, Maven Central version.
 - README "Project Structure" section presenting the repository as an annotated directory tree
   (top-level directories and build modules).
+- `release` Maven profile in the root pom for Maven Central publishing: `maven-gpg-plugin`
+  signs every artifact at `verify`, `maven-source-plugin` attaches the sources jars, and
+  `central-publishing-maven-plugin` uploads the staged bundle with `autoPublish=false` so the
+  publish step stays a manual confirmation in the Portal.
+- Documentation-only placeholder package `io.github.lamspace.meili.starter` in the starter
+  (a `package-info` plus the behavior-free `MeiliStarter` type): the javadoc tool needs at
+  least one documentable type, so this gives the dependency-aggregate jar the sources/javadoc
+  companions Maven Central requires for every published jar. The starter still ships no
+  functional runtime logic and consumers must not reference the placeholder.
 
 ### Changed
 
@@ -35,8 +44,9 @@ once released.
 - Exception messages and log output in `src/main`, and all source comments/Javadoc across
   main, test and examples, are now English (Chinese string literals that carry test/demo
   *data* semantics are preserved; see `CONTRIBUTING.md`).
-- README install section now states the publishing truth explicitly: artifacts are not yet
-  on Maven Central; install from source. Message wording is not part of the API contract.
+- Version `1.0-SNAPSHOT` → `1.0.0` across the reactor for the first Maven Central release;
+  the README install sections and the Jackson3 usage snippet in the boot migration guide now
+  carry the published coordinates. Message wording is not part of the API contract.
 - Display-name convention adopted: prose and titles read "Meili-ORM" (the GitHub repository is
   renamed to match) while the lowercase `meili-orm` stays the artifact, package and
   config-prefix slug. The README badge row
@@ -48,8 +58,3 @@ once released.
 - Internal process materials (design document, original implementation plan, spike evidence
   archive, upstream issue draft) moved out of the deliverable surface into `docs/internal/`;
   deliverable docs no longer presume them.
-
-### Release checklist (when the first Central release lands)
-
-Add the Maven Central version badge, rewrite the install sections of both READMEs, and
-replace `[Unreleased]` with the released version and date.

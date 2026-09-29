@@ -57,7 +57,7 @@ Jackson3 module usage:
 <dependency>
     <groupId>io.github.lamspace</groupId>
     <artifactId>meili-orm-serializer-jackson3</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 </dependency>
 ```
 

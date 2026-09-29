@@ -7,7 +7,7 @@
 
 [English](CHANGELOG.md)
 
-## [未发布]
+## [1.0.0] - 2026-09-29
 
 ### 新增
 
@@ -18,8 +18,17 @@
   `docs/zh-CN/` 中文镜像，每份文档顶部语言切换链接。
 - `CONTRIBUTING.md`（构建命令、三道门禁、源码语言约定、维护者依赖升级清单）与本
   `CHANGELOG.md`，均为双语。
-- 徽章：许可证、CI 状态、Java 基线、Spring Boot 双代、Meilisearch 服务端代际。
+- 徽章：许可证、CI 状态、Java 基线、Spring Boot 双代、Meilisearch 服务端代际、
+  Maven Central 版本。
 - README 新增「项目结构」小节，以带注释的目录树逐一说明顶层目录与构建模块。
+- 根 pom 新增 `release` Maven profile，面向 Maven Central 发布：`maven-gpg-plugin` 在
+  `verify` 阶段为全部构件签名，`maven-source-plugin` 挂载 sources jar，
+  `central-publishing-maven-plugin` 上传 staging bundle 且 `autoPublish=false`，把最终的
+  Publish 保留为 Portal 上的人工确认。
+- starter 新增纯文档占位包 `io.github.lamspace.meili.starter`（`package-info` 加一个无行为的
+  `MeiliStarter` 类型）：javadoc 工具要求至少一个可文档化类型，据此让这个依赖聚合 jar 满足
+  Maven Central 对每个 jar 的 sources/javadoc 伴随件要求。starter 仍不含任何功能运行期逻辑，
+  消费方不得引用占位类型。
 
 ### 变更
 
@@ -29,8 +38,8 @@
   更名发生在首次发布之前，旧坐标不存在下游影响。
 - `src/main` 的异常消息与日志文案、以及 main/test/examples 的全部注释/Javadoc 统一为英文
   （承担测试/演示**数据**语义的中文字面量按约定保留，见 `CONTRIBUTING.md`）。
-- README 装配小节明示发布状态：构件尚未上架 Maven Central，从源码安装。消息文本不属于
-  API 契约。
+- 全反应堆版本由 `1.0-SNAPSHOT` 升为 `1.0.0`，完成首次 Maven Central 发布；README 装配
+  小节与 boot 迁移指南的 Jackson3 用法片段改为已发布坐标。消息文本不属于 API 契约。
 - 确立展示名约定：正文与标题用 "Meili-ORM"（GitHub 仓库同步更名），小写 `meili-orm` 仍作
   构件、包名与配置前缀 slug；README 徽章移到标题下方居中一行；概述小标题补图标统一命名
   （英文 "At a Glance"、中文「一览」）。
@@ -39,8 +48,3 @@
 
 - 内部过程材料（设计文档、原始实施计划、spike 实证档案、上游 issue 草稿）移入
   `docs/internal/`，不再出现在交付文档面；交付文档不以其为阅读前提。
-
-### 发布清单（首个 Central 版本落地时）
-
-追加 Maven Central 版本徽章、改写两份 README 的装配小节、将 `[未发布]` 替换为发布版本号
-与日期。

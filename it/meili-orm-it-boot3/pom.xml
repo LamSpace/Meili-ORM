@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.github.lamspace</groupId>
         <artifactId>meili-orm-it</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
     <artifactId>meili-orm-it-boot3</artifactId>
     <name>meili-orm-it-boot3</name>

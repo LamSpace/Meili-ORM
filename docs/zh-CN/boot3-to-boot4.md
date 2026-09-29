@@ -44,7 +44,7 @@ Jackson3 模块用法：
 <dependency>
     <groupId>io.github.lamspace</groupId>
     <artifactId>meili-orm-serializer-jackson3</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 </dependency>
 ```
 

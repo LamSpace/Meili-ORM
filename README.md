@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE) [![CI](https://github.com/LamSpace/Meili-ORM/actions/workflows/verify.yml/badge.svg)](https://github.com/LamSpace/Meili-ORM/actions/workflows/verify.yml) [![Java](https://img.shields.io/badge/Java-17%2B-orange)](#-build--test) [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.x%20%7C%204.x-brightgreen)](docs/boot3-to-boot4.md) [![Meilisearch](https://img.shields.io/badge/Meilisearch-v1.x-ff59a1)](https://www.meilisearch.com/docs)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE) [![CI](https://github.com/LamSpace/Meili-ORM/actions/workflows/verify.yml/badge.svg)](https://github.com/LamSpace/Meili-ORM/actions/workflows/verify.yml) [![Java](https://img.shields.io/badge/Java-17%2B-orange)](#-build--test) [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.x%20%7C%204.x-brightgreen)](docs/boot3-to-boot4.md) [![Meilisearch](https://img.shields.io/badge/Meilisearch-v1.x-ff59a1)](https://www.meilisearch.com/docs) [![Maven Central](https://img.shields.io/maven-central/v/io.github.lamspace/meili-orm)](https://central.sonatype.com/artifact/io.github.lamspace/meili-orm)
 
 [中文](README.zh-CN.md)
 
@@ -28,21 +28,13 @@ repository layer) while staying a third-party starter with a smaller contract su
 
 ## 📦 Install
 
-> **Not yet published to Maven Central.** Until the first release, install from source:
-
-```bash
-git clone https://github.com/LamSpace/Meili-ORM.git
-cd Meili-ORM
-mvn -DskipTests install
-```
-
-Then add the starter:
+Add the starter from Maven Central:
 
 ```xml
 <dependency>
     <groupId>io.github.lamspace</groupId>
     <artifactId>meili-orm-spring-boot-starter</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 </dependency>
 ```
 
