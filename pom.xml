@@ -270,6 +270,20 @@
                         <configuration>
                             <publishingServerId>central</publishingServerId>
                             <autoPublish>false</autoPublish>
+                            <!-- Demo and compatibility-matrix modules are build-time-only and
+                                 never ship: the plugin matches these by artifactId and leaves
+                                 them out of the deployment bundle. maven.deploy.skip alone does
+                                 not apply — this extension supersedes maven-deploy-plugin. -->
+                            <excludeArtifacts>
+                                <excludeArtifact>meili-orm-examples</excludeArtifact>
+                                <excludeArtifact>meili-orm-example-common</excludeArtifact>
+                                <excludeArtifact>meili-orm-example-boot3</excludeArtifact>
+                                <excludeArtifact>meili-orm-example-boot4</excludeArtifact>
+                                <excludeArtifact>meili-orm-it</excludeArtifact>
+                                <excludeArtifact>meili-orm-it-boot3</excludeArtifact>
+                                <excludeArtifact>meili-orm-it-boot4</excludeArtifact>
+                                <excludeArtifact>meili-orm-it-boot4-jackson3</excludeArtifact>
+                            </excludeArtifacts>
                         </configuration>
                     </plugin>
                 </plugins>
