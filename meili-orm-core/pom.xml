@@ -86,6 +86,12 @@
                         <goals>
                             <goal>test-jar</goal>
                         </goals>
+                        <!-- Attachment switch: the jar is still produced for reactor consumers
+                             when true, and is absent from the release bundle when the release
+                             profile flips it to false (see root pom). -->
+                        <configuration>
+                            <attach>${meili.test-jar.attach}</attach>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

@@ -48,6 +48,11 @@
         <jackson2.version>2.21.2</jackson2.version>
         <spring-boot.version>3.5.16</spring-boot.version><!-- compile baseline = lowest supported Boot generation -->
         <meili-server.version>v1.49.0</meili-server.version>
+        <!-- Whether core's test-jar (inter-module test fixture) is attached to the build.
+             True for ordinary builds; the release profile flips it to false so Central
+             never sees a tests.jar. Gate runs under -Prelease must pass
+             -Dmeili.test-jar.attach=true explicitly. -->
+        <meili.test-jar.attach>true</meili.test-jar.attach>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -154,7 +159,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.4.2</version>
+                    <version>3.5.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -227,6 +232,14 @@
              the active settings.xml (User Token) and an interactive GPG passphrase prompt. -->
         <profile>
             <id>release</id>
+            <properties>
+                <!-- The Central bundle must not carry core's tests.jar (pure inter-module
+                     test fixture). Flipping attachment off keeps the file built in target/
+                     while excluding it from install/deploy artifact lists. A gate run under
+                     this profile that compiles test-jar consumers must restore attachment
+                     with -Dmeili.test-jar.attach=true on the command line. -->
+                <meili.test-jar.attach>false</meili.test-jar.attach>
+            </properties>
             <build>
                 <plugins>
                     <plugin>
