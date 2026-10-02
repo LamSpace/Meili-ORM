@@ -155,7 +155,7 @@ meili.* 属性 / MeiliConnectionDetails bean
 
 ### 3.4 SDK 硬约束与应对（风险前置）
 
-| 约束 | 应对（M0 收口后全部为已实证陈述，详见 docs/spikes.md） |
+| 约束 | 应对（M0 收口后全部为已实证陈述，详见 docs/internal/spikes.md） |
 |---|---|
 | `Config` 内部自建 OkHttpClient，超时/连接池不可注入 | v1 接受默认值并写进文档「限制清单」；向 SDK 提 feature request/PR。（M0 复核 0.21.0：构造面确无 OkHttpClient 注入口） |
 | 自定义 JsonHandler 后，SDK 内部模型是否仍正确解析 | **spikeA 已定案（不兼容）**：五类 typed 读环节全部经过 JsonHandler，且 `JacksonJsonHandler` 的 `Settings.encode` 泄漏 Java 双视图字段 `filterableAttributesConfig` 致服务端 400。处置：装配 Client 一律保持默认 GsonJsonHandler；实体读写主路径全走 raw 字符串 API（`getRawDocument`/`rawSearch`），raw 为唯一契约；原"回退方案"转正，哨兵 `SpikeAJsonHandlerIT` 常驻防升级漂移 |

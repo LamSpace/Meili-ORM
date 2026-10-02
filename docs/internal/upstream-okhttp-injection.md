@@ -64,5 +64,5 @@ the minimal change. Happy to contribute a PR if one of these shapes is acceptabl
 ## Submitter notes (do not paste)
 
 - 提交者：LamSpace；提交前把仓库可见性/链接核对一遍（README 已公开）。
-- 本地实证索引：`docs/spikes.md`（冒烟记录与 `Config` 构造面 javap 实测）、`docs/limitations.md` 第 1 条。
+- 本地实证索引：`docs/internal/spikes.md`（冒烟记录与 `Config` 构造面 javap 实测）、`docs/limitations.md` 第 1 条。
 - 若上游接受方案 2/3，meili-orm 侧后续动作：新增超时属性并撤下限制清单第 1 条。

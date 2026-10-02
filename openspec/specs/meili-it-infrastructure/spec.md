@@ -46,7 +46,7 @@ Docker 守护进程与本地 v1.49.0 镜像 SHALL 是集成测试的硬前提：
 
 ### Requirement: 裸连通冒烟记录
 
-变更 SHALL 在 `docs/spikes.md` 留一份 M0.2 冒烟记录：本地 Docker 直接运行 v1.49.0，SDK 直连完成一次建索引与删索引，附命令与实际输出。
+变更 SHALL 在 `docs/internal/spikes.md` 留一份 M0.2 冒烟记录：本地 Docker 直接运行 v1.49.0，SDK 直连完成一次建索引与删索引，附命令与实际输出。
 
 #### Scenario: 冒烟可复核
 
